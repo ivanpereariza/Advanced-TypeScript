@@ -4,15 +4,10 @@ enum ROLES {
   CUSTOMER = 'customer'
 }
 
-type User = {
+interface User {
+  id: string | number,
   username: string,
   role: ROLES
 }
 
-const user1: User = {
-  username: 'Ivam',
-  role: ROLES.ADMIN
-}
-
-
-export { ROLES, User }
+export { User, ROLES }
