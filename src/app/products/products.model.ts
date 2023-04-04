@@ -1,14 +1,19 @@
+import { BaseModel } from "../base.model"
 import { Category } from "../categories/category.model"
 
 type Sizes = 'S' | 'M' | 'L' | 'XL' | 'XXL'
 
-interface Product {
-  id: string | number,
+interface Product extends BaseModel {
   title: string,
-  createdAt: Date,
+  image: string,
+  description: string,
   stock: number,
-  size?: Sizes
-  category: Category
+  size?: Sizes,
+  color: string,
+  price: number,
+  category: Category,
+  isNew: boolean,
+  tags: string[],
 }
 
 export { Sizes, Product }
